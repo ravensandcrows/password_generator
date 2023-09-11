@@ -1,10 +1,8 @@
-// Assignment Code
-var generateBtn = document.querySelector("#generate");
-
-
 //reads users input
-const btn = document.querySelector('#generate');
-btn.addEventListener('click', function() {
+//Const defines a variable or pointer as unchangeable
+
+const button = document.querySelector('#generate');
+button.addEventListener('click', function() {
     var checkboxes = document.querySelectorAll('input[name="requirement"]:checked');
     var numeric = document.getElementById("c5").value;
     var values = [];
@@ -22,32 +20,32 @@ btn.addEventListener('click', function() {
     var special_character = ["!","@","#","$","%","^","&","*","?"];
 
     //prevents user from putting null answer in for numbers
-    const numInputs = document.querySelectorAll('input[type=number]')
-      numInputs.forEach(function(input) {
-        input.addEventListener('change', function(e) {
-          if (e.target.value == '') {
-            e.target.value = 0
+    const number_null = document.querySelectorAll('input[type=number]')
+      number_null.forEach(function(input) {
+        input.addEventListener('change', function(x) {
+          if (x.target.value == '') {
+            x.target.value = 0
           }
         })
       })
 
     //makes sure that a number is chosen
     if (numeric < 8 || numeric > 128){
-      alert("Number must range from 8-128")
+      alert("Password length must range from 8-128")
     }
     else{
       //first requirement checker
       if (values[0] === 'lowercase'){
-          var firstvalue = user_input.concat(lowercase);
+          var first_value = user_input.concat(lowercase);
       }
       else if(values[0] === 'uppercase'){
-          var firstvalue = user_input.concat(uppercase);
+          var first_value = user_input.concat(uppercase);
       }
       else if(values[0]==='special character'){
-          var firstvalue = user_input.concat(special_character);
+          var first_value = user_input.concat(special_character);
       }
       else if(values[0]==='numbers'){
-        var firstvalue = user_input.concat(number);
+        var first_value = user_input.concat(number);
       }
       else{
         alert("Please check at least one box! ")
@@ -55,46 +53,47 @@ btn.addEventListener('click', function() {
 
       //second requirment checker
       if(values[1]==='uppercase'){
-        var secondvalue = firstvalue.concat(uppercase);
+        var second_value = first_value.concat(uppercase);
       }
       else if(values[1]==='lowercase'){
-        var secondvalue = firstvalue.concat(lowercase);
+        var second_value = first_value.concat(lowercase);
       }
       else if(values[1]==='special character'){
-       var secondvalue = firstvalue.concat(special_character)
+       var second_value = first_value.concat(special_character)
       }
      else if(values[1]==='numbers'){
-       var secondvalue = firstvalue.concat(number);
+       var second_value = first_value.concat(number);
       }
 
       //third requirment
       if(values[2]==='special character'){
-        var thirdvalue = secondvalue.concat(special_character)
+        var third_value = second_value.concat(special_character)
       }
       else if(values[2]==='lowercase'){
-        var thirdvalue = secondvalue.concat(lowercase);
+        var third_value = second_value.concat(lowercase);
       }
       else if (values[2]==='uppercase'){
-        var thirdvalue = secondvalue.concat(uppercase);
+        var third_value = second_value.concat(uppercase);
       }
       else if(values[2]==='numbers'){
-        var thirdvalue = secondvalue.concat(number);
+        var third_value = second_value.concat(number);
       }
 
       //fourth requirment option
       if(values[3]==='numbers'){
-        var fourthvalue = thirdvalue.concat(number);
+        var fourth_value = third_value.concat(number);
       }
       else if(values[3]==='special character'){
-        var fourthvalue = thirdvalue.concat(special_character)
+        var fourth_value = third_value.concat(special_character)
       }
       else if (values[3]==='uppercase'){
-        var fourthvalue = thirdvalue.concat(uppercase);
+        var fourth_value = third_value.concat(uppercase);
       }
       else if(values[3]==='lowercase'){
-        var fourthvalue = thirdvalue.concat(lowercase);
+        var fourth_value = third_value.concat(lowercase);
       }
 
+      //sets empty password to have array appended
      var final_password = [];
 
      //turns array to string to be pushed into html 
@@ -107,28 +106,28 @@ btn.addEventListener('click', function() {
       //takes users requirments into password array
       if (values.length === 1){
         for(var i = 0; i< numeric; i++) {
-          var random_password = (firstvalue[(Math.floor(Math.random() * firstvalue.length))]);
+          var random_password = (first_value[(Math.floor(Math.random() * first_value.length))]);
           final_password.push(random_password);
         }
         array_to_string()
       }
       else if (values.length === 2){
         for(var i = 0; i< numeric; i++) {
-          var random_password = (secondvalue[(Math.floor(Math.random() * secondvalue.length))]);
+          var random_password = (second_value[(Math.floor(Math.random() * second_value.length))]);
           final_password.push(random_password);
         }
         array_to_string()
       }
       else if (values.length === 3){
         for(var i = 0; i< numeric; i++) {
-          var random_password = (thirdvalue[(Math.floor(Math.random() * thirdvalue.length))]);
+          var random_password = (third_value[(Math.floor(Math.random() * third_value.length))]);
           final_password.push(random_password);
         }
         array_to_string()
       }
       else{
          for(var i = 0; i< numeric; i++) {
-          var random_password = (thirdvalue[(Math.floor(Math.random() * thirdvalue.length))]);
+          var random_password = (fourth_value[(Math.floor(Math.random() * fourth_value.length))]);
           final_password.push(random_password);
         }
         array_to_string()
