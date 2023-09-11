@@ -1,8 +1,8 @@
 //reads users input
 //Const defines a variable or pointer as unchangeable
 
-const button = document.querySelector('#generate');
-button.addEventListener('click', function() {
+const button = document.querySelector("#generate");
+button.addEventListener("click", function() {
     var checkboxes = document.querySelectorAll('input[name="requirement"]:checked');
     var numeric = document.getElementById("c5").value;
     var values = [];
@@ -20,10 +20,10 @@ button.addEventListener('click', function() {
     var special_character = ["!","@","#","$","%","^","&","*","?"];
 
     //prevents user from putting null answer in for numbers
-    const number_null = document.querySelectorAll('input[type=number]')
+    const number_null = document.querySelectorAll("input[type=number]")
       number_null.forEach(function(input) {
-        input.addEventListener('change', function(x) {
-          if (x.target.value == '') {
+        input.addEventListener("change", function(x) {
+          if (x.target.value == "") {
             x.target.value = 0
           }
         })
@@ -35,16 +35,16 @@ button.addEventListener('click', function() {
     }
     else{
       //first requirement checker
-      if (values[0] === 'lowercase'){
+      if (values[0] === "lowercase"){
           var first_value = user_input.concat(lowercase);
       }
-      else if(values[0] === 'uppercase'){
+      else if(values[0] === "uppercase"){
           var first_value = user_input.concat(uppercase);
       }
-      else if(values[0]==='special character'){
+      else if(values[0]==="special character"){
           var first_value = user_input.concat(special_character);
       }
-      else if(values[0]==='numbers'){
+      else if(values[0]==="numbers"){
         var first_value = user_input.concat(number);
       }
       else{
@@ -52,44 +52,44 @@ button.addEventListener('click', function() {
       }
 
       //second requirment checker
-      if(values[1]==='uppercase'){
+      if(values[1]==="uppercase"){
         var second_value = first_value.concat(uppercase);
       }
-      else if(values[1]==='lowercase'){
+      else if(values[1]==="lowercase"){
         var second_value = first_value.concat(lowercase);
       }
-      else if(values[1]==='special character'){
+      else if(values[1]==="special character"){
        var second_value = first_value.concat(special_character)
       }
-     else if(values[1]==='numbers'){
+     else if(values[1]==="numbers"){
        var second_value = first_value.concat(number);
       }
 
       //third requirment
-      if(values[2]==='special character'){
+      if(values[2]==="special character"){
         var third_value = second_value.concat(special_character)
       }
-      else if(values[2]==='lowercase'){
+      else if(values[2]==="lowercase"){
         var third_value = second_value.concat(lowercase);
       }
-      else if (values[2]==='uppercase'){
+      else if (values[2]==="uppercase"){
         var third_value = second_value.concat(uppercase);
       }
-      else if(values[2]==='numbers'){
+      else if(values[2]==="numbers"){
         var third_value = second_value.concat(number);
       }
 
       //fourth requirment option
-      if(values[3]==='numbers'){
+      if(values[3]==="numbers"){
         var fourth_value = third_value.concat(number);
       }
-      else if(values[3]==='special character'){
+      else if(values[3]==="special character"){
         var fourth_value = third_value.concat(special_character)
       }
-      else if (values[3]==='uppercase'){
+      else if (values[3]==="uppercase"){
         var fourth_value = third_value.concat(uppercase);
       }
-      else if(values[3]==='lowercase'){
+      else if(values[3]==="lowercase"){
         var fourth_value = third_value.concat(lowercase);
       }
 
@@ -99,7 +99,7 @@ button.addEventListener('click', function() {
      //turns array to string to be pushed into html 
      function array_to_string(){
       final_password = final_password.toString();
-      final_password=final_password.replace(/\,/g,'');
+      final_password=final_password.replace(/\,/g,"");
       document.getElementById("password").placeholder = final_password;
      }
 
