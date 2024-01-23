@@ -4,9 +4,24 @@
 
 To develop a program that can create complex and secure passwords for the user. This project was built to provide users a quick way to meet various password needs across the web. With so many different requirments for passwords from length and various character needs, it can be difficult to create secure passwords, so this program aims to solve that.
 
+Site: https://ravensandcrows.github.io/password_generator/
+
 ## Usage
 
 To use, enter in the password length desired, and then check at least one of the character options.
+
+When you log on to the site you will see:
+![landing page](assets/images/emptyPassword.png)
+
+If you do not select enough requirments or your password is too short or long an alert will popup:
+
+![alert that password parameters not met](assets/images/err.png)
+
+Here is an example of a password with few elements selected:
+![password with all the options selected](assets/images/smallpassword.png)
+
+Here is an example of a password with every element selected:
+![password with all the options selected](assets/images/passwordAll.png)
 
 ## Credits
 
