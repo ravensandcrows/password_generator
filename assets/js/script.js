@@ -1,7 +1,7 @@
 const button = document.querySelector('#generate');
 
 //begin action after button is pressed
-button.addEventListener('click', function () {
+button.addEventListener('click', () => {
     const checkboxes = document.querySelectorAll('input[name="requirement"]:checked');
     const passLength = document.getElementById("c5").value;
     const checked = [];
@@ -21,28 +21,32 @@ button.addEventListener('click', function () {
     const special_character = ["!", "@", "#", "$", "%", "^", "&", "*", "?"];
 
     //makes sure that a number is chosen
-    if (passLength < 8 || passLength > 128) {
+    if (8 > passLength || passLength > 128) {
         alert("Password length must range from 8-128");
     }
-    // add user's choices
-    else if (checked.length !== 0) {
-        if (checked.includes('special character')) {
-            userInput = userInput.concat(special_character);
-        }
-        if (checked.includes('lowercase')) {
-            userInput = userInput.concat(lowercase);
-        }
-        if (checked.includes('uppercase')) {
-            userInput = userInput.concat(uppercase);
-        }
-        if (checked.includes('numbers')) {
-            userInput = userInput.concat(number);
-        }
-    }
-    // remind user to select an option
     else {
-        alert("Please check at least one box! ")
+        // add user's choices
+        if (checked.length !== 0) {
+            if (checked.includes('special character')) {
+                userInput = userInput.concat(special_character);
+            }
+            if (checked.includes('lowercase')) {
+                userInput = userInput.concat(lowercase);
+            }
+            if (checked.includes('uppercase')) {
+                userInput = userInput.concat(uppercase);
+            }
+            if (checked.includes('numbers')) {
+                userInput = userInput.concat(number);
+            }
+        }
+        // remind user to select an option
+        else {
+            alert("Please check at least one box! ")
+        }
+
     }
+
 
     //turns array to string to be pushed into html 
     function array_to_string(finalPassword) {
@@ -52,9 +56,9 @@ button.addEventListener('click', function () {
     }
 
     //takes users requirments into password array
-    if (userInput.length !== 0){
+    if (userInput.length !== 0) {
         const finalPassword = [];
-        for(let i = 0; i < passLength; i++){
+        for (let i = 0; i < passLength; i++) {
             const randomChar = (userInput[(Math.floor(Math.random() * userInput.length))]);
             finalPassword.push(randomChar);
         }
