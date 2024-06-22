@@ -134,4 +134,23 @@ button[disabled] {
   .btn {
     font-size: 0.8rem;
   }
+  .checkbox{
+    transform: scale(1.5);
+    margin-bottom: 10%; 
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .col {
+    display: flex;
+    flex-direction: column;
+  }
+  .margin{
+    text-align: center;
+  }
+  .card-header{
+    text-align: center;
+  }
 }

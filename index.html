@@ -30,12 +30,21 @@
         </div>
         <div>
           <p>Select your password needs:</p>
-          <label for="c1"> <input type="checkbox" name="requirement" value="lowercase" id="c1">Lowercase</label>
-          <label for="c2"><input type="checkbox" name="requirement" value="uppercase" id="c2"> Uppercase</label>
-          <label for="c3"><input type="checkbox" name="requirement" value="special character" id="c3">Special Character</label>
-          <label for="c4"><input type="checkbox" name="requirement" value="numbers" id="c4">Numbers</label>
+          <div class="container">
+            <div class="col">
+              <label for="c1"> <input type="checkbox" name="requirement" value="lowercase" class="checkbox" id="c1"> Lowercase</label>
+              <label for="c2"><input type="checkbox" name="requirement" value="uppercase" class="checkbox" id="c2"> Uppercase</label>
+              <label for="c3"><input type="checkbox" name="requirement" value="special character" class="checkbox" id="c3"> Special Character</label>
+              <label for="c4"><input type="checkbox" name="requirement" value="numbers" class="checkbox" id="c4"> Numbers</label>
+            </div>
+          </div>
+
           <br>
-          <label for="c5"><input type="number" name="numeric" value="number" id="c5">Password Length 8-128</label>
+          <div class="container">
+            <div class="col">
+              <label for="c5" class="margin">Password Length 8-128: <input type="number" name="numeric" value="number" id="c5"></label>
+            </div>
+          </div>
         </div>
       </div>
     </div>
